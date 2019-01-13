@@ -14,7 +14,7 @@
         <select id="classe" size="1">
             <option>b2a
         </select>
-        <button type="submit" value="Validez" onclick="envoiApi4()">Envoi</button>
+        <button value="Validez" onclick="envoiApi('1')">Envoi</button>
     </div>
     <br>
     <div id="ajoutdevoir" style="text-align:center;">
@@ -28,12 +28,12 @@
         <br>
         <textarea id="devoirajout" rows="4" cols="50"> Entrez le devoir </textarea>
         <br>
-        <button type="submit" value="Validez" onclick="envoiApi3()">Envoi</button>
+        <button value="Validez" onclick="envoiApi(2)">Envoi</button>
     </div>
     <div id="supdevoir">
         <p>Quel id voulez vous supprimer ?</p>
         <input id="iddel" type="number" placeholder="id">
-        <button type="button" value="Validez" onclick="envoiApi5()">Envoi</button>
+        <button type="button" value="Validez" onclick="envoiApi(5)">Envoi</button>
     </div>
     <div id="inscription" style="text-align:center;">
         <input id="pseudoinscri" type="text" placeholder="Pseudo"><br>
@@ -43,107 +43,24 @@
         <select id="classeinscri" size="1">
             <option>b2a
         </select><br>
-        <button type="submit" value="Validez" onclick="envoiApi2()">Envoi</button>
+        <button value="Validez" onclick="envoiApi(3)">Envoi</button>
     </div>
     <div id="connexion" style="text-align:center;">
         <input id="pseudoco" type="text" placeholder="Pseudo"><br>
         <input id="passco" type="password" placeholder="Mot de passe"><br>
-        <button type="submit" value="Validez" onclick="envoiApi()">Envoi</button>
+        <button value="Validez" onclick="envoiApi(4)">Envoi</button>
     </div>
     <div id="result" style="text-align:center;">
     </div>
     <br>
     <br>
-    <button type="button" onclick="dispListeDevoir()">Liste devoir</button>
-    <button type="button" onclick="dispNewDevoir()">Nouveau devoir</button>
-    <button type="button" onclick="dispDelDevoir()">Supression devoirs</button>
-    <button type="button" onclick="dispConnexion()">Connexion</button>
-    <button type="button" onclick="dispInscription()">Inscription</button>
+    <button onclick="dispListeDevoir()">Liste devoir</button>
+    <button onclick="dispNewDevoir()">Nouveau devoir</button>
+    <button onclick="dispDelDevoir()">Supression devoirs</button>
+    <button onclick="dispConnexion()">Connexion</button>
+    <button onclick="dispInscription()">Inscription</button>
 
-    <script type="text/javascript">
-        function envoiApi4() {
-            var values = new Object();
-            values.classe = document.getElementById("classe").value
-            actionSend(values, 4);
-        }
-
-        function envoiApi3() {
-            var values = new Object();
-            values.subjects = document.getElementById("matiereajout").value
-            values.date = document.getElementById("dateajout").value
-            values.contents = document.getElementById("devoirajout").value
-            values.classe = document.getElementById("classeajout").value
-            actionSend(values, 3);
-        }
-
-        function envoiApi2() {
-            var values = new Object();
-            values.pseudo = document.getElementById("pseudoinscri").value
-            values.email = document.getElementById("emailinscri").value
-            values.pass1 = document.getElementById("pass1inscri").value
-            values.pass2 = document.getElementById("pass2inscri").value
-            values.classe = document.getElementById("classeinscri").value
-            actionSend(values, 2);
-        }
-
-        function envoiApi() {
-            var values = new Object();
-            values.pseudo = document.getElementById("pseudoco").value
-            values.pass1 = document.getElementById("passco").value
-            actionSend(values, 1);
-        }
-
-        function envoiApi5() {
-            var values = new Object();
-            values.id = document.getElementById("iddel").value
-            actionSend(values, 5);
-        }
-
-        document.getElementById('ajoutdevoir').style.display = 'none';
-        document.getElementById('inscription').style.display = 'none';
-        document.getElementById('connexion').style.display = 'none';
-        document.getElementById('supdevoir').style.display = 'none';
-
-        function dispNewDevoir() {
-            document.getElementById('listedevoir').style.display = 'none';
-            document.getElementById('ajoutdevoir').style.display = 'inline';
-            document.getElementById('inscription').style.display = 'none';
-            document.getElementById('connexion').style.display = 'none';
-            document.getElementById('supdevoir').style.display = 'none';
-        }
-
-        function dispConnexion() {
-            document.getElementById('listedevoir').style.display = 'none';
-            document.getElementById('ajoutdevoir').style.display = 'none';
-            document.getElementById('inscription').style.display = 'none';
-            document.getElementById('connexion').style.display = 'inline';
-            document.getElementById('supdevoir').style.display = 'none';
-        }
-
-        function dispInscription() {
-            document.getElementById('listedevoir').style.display = 'none';
-            document.getElementById('ajoutdevoir').style.display = 'none';
-            document.getElementById('inscription').style.display = 'inline';
-            document.getElementById('connexion').style.display = 'none';
-            document.getElementById('supdevoir').style.display = 'none';
-        }
-
-        function dispListeDevoir() {
-            document.getElementById('listedevoir').style.display = 'inline';
-            document.getElementById('ajoutdevoir').style.display = 'none';
-            document.getElementById('inscription').style.display = 'none';
-            document.getElementById('connexion').style.display = 'none';
-            document.getElementById('supdevoir').style.display = 'none';
-        }
-
-        function dispDelDevoir() {
-            document.getElementById('listedevoir').style.display = 'none';
-            document.getElementById('ajoutdevoir').style.display = 'none';
-            document.getElementById('inscription').style.display = 'none';
-            document.getElementById('connexion').style.display = 'none';
-            document.getElementById('supdevoir').style.display = 'inline';
-        }
-    </script>
+    <script src="./main.js" type="text/javascript"></script>
 </body>
 
 </html>
