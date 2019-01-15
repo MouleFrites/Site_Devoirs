@@ -6,30 +6,52 @@
         else {// code for IE6, IE5
             xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
         }
-        var myJsonString = JSON.stringify(aValue);
-        xmlhttp.onreadystatechange = respond;
+        //var myJsonString = JSON.stringify(aValue);
+        console.log(aValue)
+        switch (aDest) {
+        	case './devoir_index.php':
+        		xmlhttp.onreadystatechange = respondShowTodo;
+        		break;
+        	default :
+        		xmlhttp.onreadystatechange = respond;
+        		break;
+        }
         xmlhttp.open("POST", aDest, true);
-    	xmlhttp.send(myJsonString);
+    	xmlhttp.send(aValue);
         
+    }
+    
+    function respondShowTodo() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        	//document.getElementById('result').innerHTML = xmlhttp.responseText;
+        	respondPhp = JSON.parse(xmlhttp.responseText);
+        	let toReturn = "<section class='special-area bg-white section_padding_100' id='about'>\
+        						<div class='container'>\
+            						<div class='row'>"
+        	for (var i = 0; i < respondPhp.length; i++) {
+        	toReturn += "<div class='col-12 col-md-4'>\
+                    <div class='single-special text-center wow fadeInUp' data-wow-delay='0.4s'>\
+                        <div class='single-icon'>\
+                            <i aria-hidden='true'>" + respondPhp[i].matiere + "</i>\
+                        </div>\
+                        <h4>"+ respondPhp[i].date +"</h4>\
+                        <p>" + respondPhp[i].contenu + "</p>\
+                        <p>" + respondPhp[i].id + "</p>\
+                    </div>\
+                </div>"
+        	}
+        	toReturn += "</div></div></section>"
+        	
+            document.getElementById('result').innerHTML = toReturn;
+        }
     }
     
     function respond() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
         	//document.getElementById('result').innerHTML = xmlhttp.responseText;
         	respondPhp = JSON.parse(xmlhttp.responseText);
-        	var monArraySeria = '';
-			for (var i in respondPhp)
-			{
-				for (var j in respondPhp[i])
-				{
-    				monArraySeria +=  j + ' : ' + respondPhp[i][j] + "\r\n";
-    				j++
-				}
-				monArraySeria += '<br>';
-				i++;
-			}
-			
-            document.getElementById('result').innerHTML = monArraySeria;
+            envoiApi(1)
         }
     }
+    
     

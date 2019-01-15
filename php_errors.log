@@ -14,3 +14,25 @@
 [13-Jan-2019 22:28:33 Europe/Berlin] PHP Notice:  Undefined variable: toSend in /var/www/html/workspace/postgras/suppression_devoir.php on line 27
 [13-Jan-2019 22:41:04 Europe/Berlin] PHP Notice:  Undefined variable: pseudo in /var/www/html/workspace/postgras/connexion_json.php on line 31
 [13-Jan-2019 22:41:28 Europe/Berlin] PHP Notice:  Undefined variable: pseudo in /var/www/html/workspace/postgras/connexion_json.php on line 31
+[14-Jan-2019 11:46:21 Europe/Berlin] PHP Warning:  Illegal string offset 'classe' in /var/www/html/workspace/site_devoirs/devoir_index.php on line 19
+[14-Jan-2019 11:52:21 Europe/Berlin] PHP Warning:  Illegal string offset 'classe' in /var/www/html/workspace/site_devoirs/devoir_index.php on line 19
+[14-Jan-2019 11:52:30 Europe/Berlin] PHP Warning:  Illegal string offset 'classe' in /var/www/html/workspace/site_devoirs/devoir_index.php on line 19
+[14-Jan-2019 11:54:00 Europe/Berlin] PHP Warning:  Illegal string offset 'classe' in /var/www/html/workspace/site_devoirs/devoir_index.php on line 19
+[14-Jan-2019 12:07:20 Europe/Berlin] PHP Warning:  Illegal string offset 'classe' in /var/www/html/workspace/site_devoirs/devoir_index.php on line 11
+[14-Jan-2019 12:07:20 Europe/Berlin] PHP Warning:  Illegal string offset 'classe' in /var/www/html/workspace/site_devoirs/devoir_index.php on line 21
+[14-Jan-2019 12:08:29 Europe/Berlin] PHP Warning:  Illegal string offset 'classe' in /var/www/html/workspace/site_devoirs/devoir_index.php on line 11
+[14-Jan-2019 12:08:29 Europe/Berlin] PHP Warning:  Illegal string offset 'classe' in /var/www/html/workspace/site_devoirs/devoir_index.php on line 21
+[14-Jan-2019 12:36:52 Europe/Berlin] PHP Notice:  Array to string conversion in /var/www/html/workspace/site_devoirs/devoir_index.php on line 31
+[14-Jan-2019 13:36:17 Europe/Berlin] PHP Notice:  Array to string conversion in /var/www/html/workspace/site_devoirs/devoir_index.php on line 30
+[14-Jan-2019 13:36:26 Europe/Berlin] PHP Notice:  Array to string conversion in /var/www/html/workspace/site_devoirs/devoir_index.php on line 30
+[15-Jan-2019 16:07:04 Europe/Berlin] PHP Fatal error:  Call to undefined method PDOStatement::bindValues() in /var/www/html/workspace/site_devoirs/update_devoir.php on line 20
+[15-Jan-2019 16:07:44 Europe/Berlin] PHP Fatal error:  Call to undefined method PDOStatement::bindValues() in /var/www/html/workspace/site_devoirs/update_devoir.php on line 20
+[15-Jan-2019 16:11:20 Europe/Berlin] PHP Fatal error:  Call to undefined method PDOStatement::bindValues() in /var/www/html/workspace/site_devoirs/update_devoir.php on line 20
+[15-Jan-2019 16:11:23 Europe/Berlin] PHP Fatal error:  Call to undefined method PDOStatement::bindValues() in /var/www/html/workspace/site_devoirs/update_devoir.php on line 20
+[15-Jan-2019 16:11:31 Europe/Berlin] PHP Fatal error:  Call to undefined method PDOStatement::bindValues() in /var/www/html/workspace/site_devoirs/update_devoir.php on line 20
+[15-Jan-2019 16:13:18 Europe/Berlin] PHP Fatal error:  Call to undefined method PDOStatement::bindValues() in /var/www/html/workspace/site_devoirs/update_devoir.php on line 21
+[15-Jan-2019 16:21:10 Europe/Berlin] PHP Notice:  Undefined variable: reponse in /var/www/html/workspace/site_devoirs/update_devoir.php on line 33
+[15-Jan-2019 16:21:30 Europe/Berlin] PHP Notice:  Array to string conversion in /var/www/html/workspace/site_devoirs/update_devoir.php on line 33
+[15-Jan-2019 16:24:04 Europe/Berlin] PHP Fatal error:  Call to undefined method PDOStatement::bindValues() in /var/www/html/workspace/site_devoirs/update_devoir.php on line 22
+[15-Jan-2019 16:24:36 Europe/Berlin] PHP Fatal error:  Call to undefined method PDOStatement::bindValues() in /var/www/html/workspace/site_devoirs/update_devoir.php on line 22
+[15-Jan-2019 16:44:43 Europe/Berlin] PHP Parse error:  syntax error, unexpected '{' in /var/www/html/workspace/site_devoirs/update_devoir.php on line 23

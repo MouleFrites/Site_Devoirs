@@ -7,6 +7,7 @@ $response = json_decode($str_json, true);
 $dsn      = 'pgsql:dbname=devoirs;host=127.0.0.1';
 $user     = 'postgres';
 $password = 'your-pass';
+
 try {
     $dbh = new PDO($dsn, $user, $password);
 }
