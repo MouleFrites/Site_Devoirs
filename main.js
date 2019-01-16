@@ -25,9 +25,12 @@ function envoiApi(aValue) {
             	actionSend(values, "./connexion_json.php");*/
             } else if (aValue == 5) {
             	values.id = document.getElementById("removeById").value
-            	console.log(values.id)
+            	if (values.id == 1) {
+            		alert('Personne ne supprimera le 1er !!!')
+            	} else {
             	var myJsonString = JSON.stringify(values)
             	actionSend(myJsonString, "./suppression_devoir.php")
+            	}
             } else if (aValue == 6) {
             	values.id = document.getElementById("updateById").value
             	values.toChange = document.getElementById("toChange").value

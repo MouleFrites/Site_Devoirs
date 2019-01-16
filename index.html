@@ -1,66 +1,148 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <title>Test</title>
-    <link href="index.css" rel="stylesheet" media="all" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Colorlib App - App Landing Page</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="bootstrap/img/core-img/favicon.ico">
+
+    <!-- Core Stylesheet -->
+    <link href="bootstrap/style.css" rel="stylesheet">
+
+    <!-- Responsive CSS -->
+    <link href="bootstrap/css/responsive.css" rel="stylesheet">
+
     <script type="text/javascript" src="./apijson.js"></script>
+    <script type="text/javascript" src="./main.js"></script>
+
 </head>
 
 <body>
 
-    <div id="listedevoir" style="text-align:center;">
-        <select id="classe" size="1">
-            <option>b2a
-        </select>
-        <button value="Validez" onclick="envoiApi('1')">Envoi</button>
+    <div id="preloader">
+        <div class="colorlib-load"></div>
     </div>
-    <br>
-    <div id="ajoutdevoir" style="text-align:center;">
-        <input id="matiereajout" type="text" placeholder="Matière">
-        <br>
-        <select id="classeajout" size="1">
-            <option>b2a
-        </select>
-        <br>
-        <input id="dateajout" type="date" placeholder="Date">
-        <br>
-        <textarea id="devoirajout" rows="4" cols="50"> Entrez le devoir </textarea>
-        <br>
-        <button value="Validez" onclick="envoiApi(2)">Envoi</button>
-    </div>
-    <div id="supdevoir">
-        <p>Quel id voulez vous supprimer ?</p>
-        <input id="iddel" type="number" placeholder="id">
-        <button type="button" value="Validez" onclick="envoiApi(5)">Envoi</button>
-    </div>
-    <div id="inscription" style="text-align:center;">
-        <input id="pseudoinscri" type="text" placeholder="Pseudo"><br>
-        <input id="emailinscri" type="mail" placeholder="Email"><br>
-        <input id="pass1inscri" type="password" placeholder="Mot de passe"><br>
-        <input id="pass2inscri" type="password" placeholder="Retaper votre mot de passe"><br>
-        <select id="classeinscri" size="1">
-            <option>b2a
-        </select><br>
-        <button value="Validez" onclick="envoiApi(3)">Envoi</button>
-    </div>
-    <div id="connexion" style="text-align:center;">
-        <input id="pseudoco" type="text" placeholder="Pseudo"><br>
-        <input id="passco" type="password" placeholder="Mot de passe"><br>
-        <button value="Validez" onclick="envoiApi(4)">Envoi</button>
-    </div>
-    <div id="result" style="text-align:center;">
-    </div>
-    <br>
-    <br>
-    <button onclick="dispListeDevoir()">Liste devoir</button>
-    <button onclick="dispNewDevoir()">Nouveau devoir</button>
-    <button onclick="dispDelDevoir()">Supression devoirs</button>
-    <button onclick="dispConnexion()">Connexion</button>
-    <button onclick="dispInscription()">Inscription</button>
 
-    <script src="./main.js" type="text/javascript"></script>
+    <div id="result">
+        <p>test</p>
+    </div>
+
+    <section class="special-area bg-white section_padding_100" id="about">
+        <div class="container">
+            <div class="row">
+            	<div class="col-12">
+                    <!-- Section Heading Area -->
+                    <div class="section-heading text-center">
+                        <h2>Ajouter, Modifier, Supprimer</h2>
+                        <div class="line-shape"></div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="single-special text-center wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="single-icon">
+                            <i aria-hidden="true">Ajouter</i>
+                        </div>
+                        <div class="form-group">
+                            <label for="addMatiere">Matière</label>
+                            <input type="text" class="form-control form-control-sm" id="addMatiere" placeholder="Entrer une matière">
+                        </div>
+                        <div class="form-group">
+                            <label for="addDate">Date</label>
+                            <input type="date" class="form-control form-control-sm" id="addDate" placeholder="Choisissez la date">
+                        </div>
+                        <div class="form-group">
+                            <label for="addDevoir">Devoir</label>
+                            <textarea class="form-control form-control-sm" id="addDevoir" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" onclick="envoiApi(2)">Envoi</button>
+                        <p>Toutes vos données sont protégé, c'est promis</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="single-special text-center wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="single-icon">
+                            <i aria-hidden="true">Modifier</i>
+                        </div>
+                        <div class="form-group">
+                            <label for="removeById">ID</label>
+                            <input type="text" class="form-control form-control-sm" id="updateById" placeholder="Entrer l'ID à modifier">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">A modifier</label>
+                            <select class="form-control" id="toChange">
+                                <option>matiere</option>
+                                <option>date</option>
+                                <option>contenu</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="putDevoir">Modification</label>
+                            <input type="text" class="form-control form-control-sm" id="update" placeholder="Entrer votre modification">
+                        </div>
+                        <button type="submit" class="btn btn-primary" onclick="envoiApi(6)">Envoi</button>
+                        <p>Comment ça on a subi un vol de 3 Milliards de compte ?</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="single-special text-center wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="single-icon">
+                            <i aria-hidden="true">Supprimer</i>
+                        </div>
+                        <div class="form-group">
+                            <label for="removeById">ID</label>
+                            <input type="text" class="form-control form-control-sm" id="removeById" placeholder="Entrer l'ID à supprimer">
+                        </div>
+                        <button type="submit" class="btn btn-primary" onclick="envoiApi(5)">Envoi</button>
+                        <p>Yahoo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ***** Footer Area Start ***** -->
+    <footer class="footer-social-icon text-center section_padding_70 clearfix">
+        <!-- footer logo -->
+        <div class="footer-text">
+            <h2>MoulesFrites</h2>
+        </div>
+        <!-- Foooter Text-->
+        <div class="copyright-text">
+            <!-- ***** Removing this text is now allowed! This template is licensed under CC BY 3.0 ***** -->
+            <p>No-Copyright ©2019 To-Do List by <a href="https://github.com/MouleFrites" target="_blank">MoulesFrites</a></p>
+        </div>
+    </footer>
+    <!-- ***** Footer Area Start ***** -->
+
+    <script type="text/javascript">
+        envoiApi(1)
+    </script>
+
+    <!-- Jquery-2.2.4 JS -->
+    <script src="bootstrap/js/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="bootstrap/js/popper.min.js"></script>
+    <!-- Bootstrap-4 Beta JS -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- All Plugins JS -->
+    <script src="bootstrap/js/plugins.js"></script>
+    <!-- Slick Slider Js-->
+    <script src="bootstrap/js/slick.min.js"></script>
+    <!-- Footer Reveal JS -->
+    <script src="bootstrap/js/footer-reveal.min.js"></script>
+    <!-- Active JS -->
+    <script src="bootstrap/js/active.js"></script>
+
 </body>
 
 </html>
